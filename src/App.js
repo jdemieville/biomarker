@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import 'whatwg-fetch';
 import BiomarkerName from './components/BiomarkerName';
 import SearchBar from './components/SearchBar';
 import ProcessTable from './components/ProcessTable';
-import fetch from 'node-fetch';
 import './App.css';
 
 //api url
@@ -22,7 +22,7 @@ class App extends Component {
   
   //retrieve biomarkers from API and add to biomarker array
   loadBiomarkers() {
-    fetch(BIOURL, {
+    window.fetch(BIOURL, {
       method: 'GET'
     })
     .then(resp => resp.json())
