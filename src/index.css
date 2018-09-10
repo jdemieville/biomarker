@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2 {
+  color: #847577;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline-block;
+  margin: 0.35em;
+  border-radius: 8px;
+  padding: 0.5em;
+  background: #08708A;
+}
+
+.Fibrosis {
+  background: #D73A31;
+}
+
+.Housekeeping {
+  background: #D0D3C5;
+}
+
+.Inflammation {
+  background: #032B2F;
+}
+
+.Mast_Cells {
+  background: #08708A;
+}
+
+.Proliferation {
+  background: #56B1BF;
+}
