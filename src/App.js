@@ -5,6 +5,16 @@ import SearchBar from './components/SearchBar';
 import ProcessTable from './components/ProcessTable';
 import './App.css';
 
+//semantic ui imports
+import {
+  Container,
+  Dimmer,
+  Divider,
+  Icon,
+  Loader,
+  Menu
+} from 'semantic-ui-react';
+
 //api url
 const BIOURL = 'https://biomarker-server.herokuapp.com/api/biomarkers';
 class App extends Component {
@@ -53,24 +63,44 @@ class App extends Component {
     
     if(loading) {
       return (
-        <h1>Loading...</h1>  
+        <div>
+        <Container fluid>
+          <Divider clearing />
+              <Dimmer active inverted>
+                <Loader size='large'>Loading</Loader>
+              </Dimmer>
+          </Container>
+        </div>
       );
     } else {
         return (
           <div className="App">
-            <h1>Biomarkers</h1>
-            <SearchBar
-              filterText={this.state.filterText}
-              filterBiomarker={this.filterBiomarker.bind(this)}
-            />
-            <BiomarkerName
-             data={this.state.biomarkers}
-             filterText={this.state.filterText}
-             addBiomarker={this.addBiomarker.bind(this)}
-            />
-            <ProcessTable
-              data={this.state.processes}
-            />
+            <Menu fixed='top' inverted>
+              <Container>
+                <Menu.Item as='a' header>
+                  <Icon circular name='dna'/>
+                  Biomarkers
+                </Menu.Item>
+                <Menu.Item>
+                  <SearchBar
+                    filterText={this.state.filterText}
+                    filterBiomarker={this.filterBiomarker.bind(this)}
+                  />
+                </Menu.Item>
+              </Container>
+            </Menu>
+            <Container text style={{ marginTop: '6em' }}>
+              <ProcessTable
+                data={this.state.processes}
+              />
+
+              <BiomarkerName
+               data={this.state.biomarkers}
+               filterText={this.state.filterText}
+               addBiomarker={this.addBiomarker.bind(this)}
+              />
+
+            </Container>
           </div>
         );
       }
