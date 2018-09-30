@@ -14,7 +14,7 @@ class SearchBar extends Component {
                     <input
                         type="text"
                         ref={(value) => this.myValue = value}
-                        placeholder="Biomarker name to search"
+                        placeholder="  Search biomarkers"
                         onChange={this.filterBiomarker.bind(this)}
                     />
                 </form>
