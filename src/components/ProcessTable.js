@@ -17,7 +17,6 @@ class ProcessTable extends Component {
         
         return (
             <div>
-                <h2>Processes</h2>
                 <ul>
                     {selectList}
                 </ul>
